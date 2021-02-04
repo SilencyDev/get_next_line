@@ -6,7 +6,7 @@
 /*   By: kmacquet <kmacquet@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/01/30 17:06:17 by kmacquet          #+#    #+#             */
-/*   Updated: 2021/02/04 10:44:25 by kmacquet         ###   ########.fr       */
+/*   Updated: 2021/02/04 11:09:23 by kmacquet         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,9 +19,6 @@
 
 # ifndef BUFFER_SIZE
 #  define BUFFER_SIZE 42
-# endif
-# ifndef FD_SIZE
-#  define FD_SIZE 65535
 # endif
 
 char	*ft_strchr(const char *s, int c);
