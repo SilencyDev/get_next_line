@@ -6,7 +6,7 @@
 /*   By: kmacquet <kmacquet@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/01/30 17:05:36 by kmacquet          #+#    #+#             */
-/*   Updated: 2021/02/04 10:58:56 by kmacquet         ###   ########.fr       */
+/*   Updated: 2022/01/17 16:19:34 by kmacquet         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -48,7 +48,7 @@ int					get_next_line(int fd, char **line)
 {
 	ssize_t		r;
 	char		bf[BUFFER_SIZE + (r = 1)];
-	static char	*p_l;
+	static char	*p_l = NULL;
 	char		*tmp;
 
 	if (fd < 0 || BUFFER_SIZE <= 0 || !line)
@@ -67,7 +67,7 @@ int					get_next_line(int fd, char **line)
 		*line = ft_substr(p_l, 0, (ft_strchr(p_l, '\n') - p_l));
 	else
 		return (-1);
-	tmp = ft_strdup(p_l + (ft_strlen(*line) + (r > 0 ? +1 : +0)));
+	tmp = ft_strdup(p_l + (ft_strlen(*line) + (r > 0 ? 1 : 0)));
 	ft_memdel(&p_l);
 	p_l = tmp;
 	return (r == 0 ? 0 * ft_memdel(&p_l) : 1);
